@@ -31,7 +31,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     output += ("You will see " + input["1"][0].lower() + " outside\n")
 
     #add temp
-    output += ("With a " + input["1"][1].lower() + " and  a " + input["1"][2].lower())
+    output += ("With a " + input["1"][1].lower() + " and a " + input["1"][2].lower())
 
     conn.sendall(bytes(output, 'utf-8'))
 
