@@ -7,6 +7,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((host, port))
     
     #values the API returns
+    #or {"0": "Day 1", "1": ["Clouds", "High of 77 F", "Low of 55 F"]}
     message = b"""{
         "0": "Day 1",
         "1": [
