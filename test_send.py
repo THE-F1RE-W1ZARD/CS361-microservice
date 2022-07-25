@@ -7,7 +7,14 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((host, port))
     
     #values the API returns
-    message = b'{"0": "Day 1", "1": ["Clouds", "High of 77 F", "Low of 55 F"]}'
+    message = b"""{
+        "0": "Day 1",
+        "1": [
+            "Rain",
+            "High of 95 F",
+            "Low of 80 F"
+        ]
+    }"""
 
     s.sendall(message)
 
