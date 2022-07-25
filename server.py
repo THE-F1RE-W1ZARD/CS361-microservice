@@ -1,4 +1,4 @@
-#code adapted from: https://realpython.com/python-sockets/
+#some code adapted from: https://realpython.com/python-sockets/
 import socket
 import json
 from datetime import date, timedelta
