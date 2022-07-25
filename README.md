@@ -1,6 +1,6 @@
 # Requesting Data:
 To request data you must use the socket library in python. <br />
-The data must be sent as a byte string with the syntax:  <br />
+The data must be sent as a byte string with the syntax (or the traditonal JSON indenting):  <br />
 > {"0": "Day 1", "1": ["Clouds", "High of 77 F", "Low of 55 F"]}
 
 where "Day 1", "Clouds", "High of 77 F", and "Low of 55F" are gotten from the API call and may very.  <br />
