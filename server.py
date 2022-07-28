@@ -12,26 +12,27 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((host, port))
     s.listen()
 
-    conn, addr = s.accept()
+    while (True):
 
-    output = ""
-    input = json.loads(conn.recv(1024).decode())
+        conn, addr = s.accept()
 
-    #add day
-    if input["0"] == "Day 1":
-        output += "Today: \n"
+        output = ""
+        input = json.loads(conn.recv(1024).decode())
 
-    else:
-        date_offset = (int(input["0"][4]) - 1)
-        day = (date.today() + timedelta(days=date_offset))
-        
-        output += (day.strftime("%A") + ": \n")
+        #add day
+        if input["0"] == "Day 1":
+            output += "Today: \n"
 
-    #add weather
-    output += ("You will see " + input["1"][0].lower() + " outside\n")
+        else:
+            date_offset = (int(input["0"][4]) - 1)
+            day = (date.today() + timedelta(days=date_offset))
 
-    #add temp
-    output += ("With a " + input["1"][1].lower() + " and a " + input["1"][2].lower())
+            output += (day.strftime("%A") + ": \n")
 
-    conn.sendall(bytes(output, 'utf-8'))
+        #add weather
+        output += ("You will see " + input["1"][0].lower() + " outside\n")
 
+        #add temp
+        output += ("With a " + input["1"][1].lower() + " and a " + input["1"][2].lower())
+
+        conn.sendall(bytes(output, 'utf-8'))
